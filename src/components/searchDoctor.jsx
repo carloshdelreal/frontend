@@ -5,13 +5,15 @@ import PropTypes from 'prop-types';
 import NavComponent from './nav';
 import DoctorList from '../containers/doctorList';
 import SpecialtiesList from '../containers/specialtiesList';
+import SearchBox from './searchBox';
 
 
 const SearchDoctor = (props) => {
   const { specialtySelected } = props;
   return (
-    <div>
+    <div className="container">
       <NavComponent />
+      { specialtySelected ? (null) : (<SearchBox />) }
       { specialtySelected ? (<DoctorList />) : (<SpecialtiesList />) }
     </div>
   );

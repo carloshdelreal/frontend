@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBox from './searchBox';
 import menu from '../images/menu.png';
 import location from '../images/location.png';
 import medicoTitle from '../images/homeTitle.png';
 import homeImage from '../images/home.png';
 import pharmacy from '../images/pharmacy.png';
 import stetoscope from '../images/stetoscope.png';
-import searchSymbol from '../images/searchSymbol.png';
 import setReminder from '../images/reminder.png';
 import ambulance from '../images/ambulance.png';
 
@@ -18,9 +18,13 @@ const Home = () => {
         <div className="col-6 text-left">
           <img src={menu} alt="menu" />
         </div>
-        <div className="col-6 text-right">
-          <img src={location} alt="location" />
-          bangalore
+        <div className="home__location col-6">
+          <div>
+            <img src={location} alt="location" />
+          </div>
+          <div className="home__location--text">
+            bangalore
+          </div>
         </div>
       </div>
 
@@ -39,16 +43,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="home__search row justify-content-center">
-        <div className="col-12 col-xs-10 col-sm-8 col-md-6">
-          <div className="home__search--input">
-            <input type="text" name="search" id="search" placeholder="Search Medicines & Doctors" />
-            <div className="input-group-append">
-              <img src={searchSymbol} alt="search_symbol" />
-            </div>
-          </div>
-        </div>
-      </div>
+      <SearchBox />
 
       <div className="home__items row justify-content-center">
         <div className="col-5 col-xs-6 col-sm-4 p-2 d-flex justify-content-center">
@@ -69,10 +64,8 @@ const Home = () => {
 
         <div className="col-5 col-xs-6 col-sm-4 p-2 d-flex justify-content-center">
           <button className="home__items--button btn btn-lg btn-block shadow-sm" type="button">
-            <Link to="/about">
-              <img src={setReminder} alt="set reminder" />
-              <p>Set Reminder</p>
-            </Link>
+            <img src={setReminder} alt="set reminder" />
+            <p>Set Reminder</p>
           </button>
         </div>
 

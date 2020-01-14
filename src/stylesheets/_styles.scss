@@ -7,6 +7,11 @@ body{
   position: fixed;
   color: $red-heart;
 }
+.doctorsList{
+  &__results{
+    color: $green-text;
+  }
+}
 
 .doctor{
   font-size: smaller;
@@ -78,8 +83,8 @@ body{
   margin-top: -1rem;
   margin-left: -1rem;
   margin-right: -1rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
   padding-left: 1rem;
   background-color:$light-background;
   &__button{
@@ -103,6 +108,16 @@ body{
 
     p{
       margin-bottom: 0;
+    }
+  }
+  &__location{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+    &--text{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
   &__nav{
@@ -162,6 +177,9 @@ body{
       padding: 1rem 0px;
       p{
         margin: 0;
+      }
+      a{
+        text-decoration: none;
       }
     }
   }

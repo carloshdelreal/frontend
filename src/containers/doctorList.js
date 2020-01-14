@@ -18,20 +18,23 @@ class DoctorList extends Component {
   render() {
     const { doctors, specialties, specialtySelected } = this.props;
     let specialtydoctors;
+    let specialty;
     if (specialtySelected === null) {
       specialtydoctors = doctors;
+      specialty = null;
     } else {
       specialtydoctors = doctors.filter(doctor => doctor.specialization_id === specialtySelected);
+      specialty = specialties[specialtySelected - 1];
     }
     return (
-      <div className="px-3">
-        <h3>Doctors</h3>
+      <div className="doctorsList px-3">
+        <p className="doctorsList__results">{ `Results showing ${specialty.area} Doctors` }</p>
         <div className="row p-1">
           {specialtydoctors.map(doctor => (
             <Doctor
               key={doctor.id}
               doctor={doctor}
-              specialty={specialties[doctor.specialization_id - 1]}
+              specialty={specialty}
             />
           ))}
         </div>

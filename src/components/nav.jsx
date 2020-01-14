@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { toggleOffSpecialty } from '../actions/index';
 import backCaret from '../images/backCaret.png';
+import { Link } from 'react-router-dom';
 
 class NavComponent extends Component {
   constructor(props) {
@@ -30,7 +31,9 @@ class NavComponent extends Component {
       <div className="nav-component d-flex justify-content-space-between">
         <div className="item d-flex text-left">
           <button className="nav-component__button" type="button">
-            <img src={backCaret} alt="backcaret" />
+            <Link to="/">
+              <img src={backCaret} alt="backcaret" />
+            </Link>
           </button>
           <button className="nav-component__button" type="button" onClick={this.unselectSpecialty}>{ buttonText }</button>
         </div>
