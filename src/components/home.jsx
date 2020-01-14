@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import menu from '../images/menu.png';
 import location from '../images/location.png';
 import medicoTitle from '../images/homeTitle.png';
@@ -59,15 +60,19 @@ const Home = () => {
 
         <div className="col-5 col-xs-6 col-sm-4 p-2 d-flex justify-content-center">
           <button className="home__items--button btn btn-lg btn-block shadow-sm" type="button">
-            <img src={stetoscope} alt="doctorLogo" />
-            <p>Doctors</p>
+            <Link to="/doctor">
+              <img src={stetoscope} alt="doctorLogo" />
+              <p>Doctors</p>
+            </Link>
           </button>
         </div>
 
         <div className="col-5 col-xs-6 col-sm-4 p-2 d-flex justify-content-center">
           <button className="home__items--button btn btn-lg btn-block shadow-sm" type="button">
-            <img src={setReminder} alt="set reminder" />
-            <p>Set Reminder</p>
+            <Link to="/about">
+              <img src={setReminder} alt="set reminder" />
+              <p>Set Reminder</p>
+            </Link>
           </button>
         </div>
 
