@@ -94,7 +94,9 @@ body{
   flex: 1;
 }
 
-.profile{
+.home{
+  .profile__email,
+  .profile__logout,
   &__logout,
   &__email{
     margin: 1rem auto;
@@ -152,5 +154,15 @@ body{
       }
     }
   }
-
+  &__items{
+    &--button{
+      color: $green-text;
+      font-size: smaller;
+      font-weight: 600;
+      padding: 1rem 0px;
+      p{
+        margin: 0;
+      }
+    }
+  }
 }

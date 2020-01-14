@@ -17,6 +17,7 @@ const SearchDoctor = (props) => {
   );
 };
 
+// eslint-disable-next-line arrow-parens
 const mapStateToProps = state => ({
   specialtySelected: state.specialtySelected,
 });

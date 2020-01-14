@@ -3,17 +3,17 @@ import menu from '../images/menu.png';
 import location from '../images/location.png';
 import medicoTitle from '../images/homeTitle.png';
 import homeImage from '../images/home.png';
-import pharmacy from '../images/pharmacy.png'
+import pharmacy from '../images/pharmacy.png';
 import stetoscope from '../images/stetoscope.png';
 import searchSymbol from '../images/searchSymbol.png';
 import setReminder from '../images/reminder.png';
 import ambulance from '../images/ambulance.png';
 
-const Profile = () => {
+const Home = () => {
   const email = 'carlos@email.com';
   return (
-    <div className="container profile">
-      <div className="profile__nav row justify-content-between">
+    <div className="home container">
+      <div className="home__nav row justify-content-between">
         <div className="col-6 text-left">
           <img src={menu} alt="menu" />
         </div>
@@ -23,8 +23,8 @@ const Profile = () => {
         </div>
       </div>
 
-      <div className="profile__images row pt-1 pb-3">
-        <div className="profile__images--left col-6 align-items-center">
+      <div className="home__images row pt-1 pb-3">
+        <div className="home__images--left col-6 align-items-center">
           <div>
             <img src={medicoTitle} alt="medico_title" />
             <p>
@@ -33,14 +33,14 @@ const Profile = () => {
             </p>
           </div>
         </div>
-        <div className="profile__images--right col-6">
+        <div className="home__images--right col-6">
           <img src={homeImage} alt="home_image" />
         </div>
       </div>
 
-      <div className="profile__search row justify-content-center">
+      <div className="home__search row justify-content-center">
         <div className="col-12 col-xs-10 col-sm-8 col-md-6">
-          <div className="profile__search--input">
+          <div className="home__search--input">
             <input type="text" name="search" id="search" placeholder="Search Medicines & Doctors" />
             <div className="input-group-append">
               <img src={searchSymbol} alt="search_symbol" />
@@ -49,30 +49,30 @@ const Profile = () => {
         </div>
       </div>
 
-      <div className="row justify-content-center">
+      <div className="home__items row justify-content-center">
         <div className="col-5 col-xs-6 col-sm-4 p-2 d-flex justify-content-center">
-          <button className="specialty__button btn btn-lg btn-block shadow-sm" type="button">
+          <button className="home__items--button btn btn-lg btn-block shadow-sm" type="button">
             <img src={pharmacy} alt="pharmacy logo" />
             <p>Pharmacy</p>
           </button>
         </div>
 
         <div className="col-5 col-xs-6 col-sm-4 p-2 d-flex justify-content-center">
-          <button className="specialty__button btn btn-lg btn-block shadow-sm" type="button">
+          <button className="home__items--button btn btn-lg btn-block shadow-sm" type="button">
             <img src={stetoscope} alt="doctorLogo" />
             <p>Doctors</p>
           </button>
         </div>
 
         <div className="col-5 col-xs-6 col-sm-4 p-2 d-flex justify-content-center">
-          <button className="specialty__button btn btn-lg btn-block shadow-sm" type="button">
+          <button className="home__items--button btn btn-lg btn-block shadow-sm" type="button">
             <img src={setReminder} alt="set reminder" />
             <p>Set Reminder</p>
           </button>
         </div>
 
         <div className="col-5 col-xs-6 col-sm-4 p-2 d-flex justify-content-center">
-          <button className="specialty__button btn btn-lg btn-block shadow-sm" type="button">
+          <button className="home__items--button btn btn-lg btn-block shadow-sm" type="button">
             <img src={ambulance} alt="ambulance" />
             <p>Emergency</p>
           </button>
@@ -93,4 +93,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Home;
