@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
 import Home from './home';
 import SearchDoctor from './searchDoctor';
-import DoctorList from '../containers/doctorList';
+import DoctorProfile from './doctorProfile';
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class App extends Component {
@@ -12,8 +12,8 @@ export default class App extends Component {
         <div>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/doctor" component={SearchDoctor} />
-            <Route path="/doctor/:id" component={DoctorList} />
+            <Route path="/doctor" exact component={SearchDoctor} />
+            <Route path="/doctor/:id" component={DoctorProfile} />
             <Route path="/about" render={() => <div>About</div>} />
           </Switch>
         </div>

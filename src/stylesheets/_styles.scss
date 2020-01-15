@@ -99,6 +99,7 @@ body{
   flex: 1;
 }
 
+.doctorProfile,
 .home{
   .profile__email,
   .profile__logout,
@@ -181,6 +182,49 @@ body{
       a{
         text-decoration: none;
       }
+    }
+  }
+}
+
+.doctorProfile{
+  background: linear-gradient(0deg, $green-text 0%, $dark-background 100%);
+  &__nav{
+    background: none;
+  }
+  &__location{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+    &>div{
+      padding: 0.1rem;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    &--text{
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &__heading{
+    h3{
+      font-size: 1rem;
+      color: white;
+      font-weight: 600;
+    }
+    p{
+      font-size: smaller;
+      color: white;
+    }
+    &--picture{
+      img{
+        border-radius: 50%;
+      }  
+    }
+    &--exp{
+      color: white;
     }
   }
 }
