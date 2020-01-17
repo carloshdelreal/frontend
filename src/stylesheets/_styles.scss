@@ -125,12 +125,10 @@ body{
     background-color: $light-background;
     color: $green-text;
     font-size: smaller;
-    margin: -1rem -2rem 0 -2rem;
     padding: 2rem 0 0 0;
   }
   &__images{
     background-color: $light-background;
-    margin: 0 -2rem 0 -2rem;
     p{
       font-size: 0.7rem;
       padding-top: 0.5rem;
@@ -187,9 +185,13 @@ body{
 }
 
 .doctorProfile{
-  background: linear-gradient(0deg, $green-text 0%, $dark-background 100%);
+  background: linear-gradient(0deg, $dark-background 0%, $green-text 100%);
   &__nav{
     background: none;
+    margin: 0;
+    &>div{
+      padding: 0;
+    }
   }
   &__location{
     display: flex;
@@ -206,6 +208,7 @@ body{
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding-right: 1rem;
     }
   }
   &__heading{
@@ -226,5 +229,49 @@ body{
     &--exp{
       color: white;
     }
+  }
+  &__navInfo{
+    font-size: small;
+    color: $gray-text;
+    &>div{
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $gray-lines;
+    }
+  }
+  &__doctorInfo{
+    padding: 1rem;
+    h5{
+      font-size: medium;
+    }
+    li{
+      font-size: small;
+    }
+  }
+  &__bookButton{
+    color: white;
+    margin-top: 2rem;
+    background: linear-gradient(90deg, $green-text 0%, $dark-background 100%);
+    border:$light-background;
+    border-radius: 16px;
+    font-size: small;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 3rem;
+  }
+  &__clinicInfo{
+    padding: 1rem;
+    h5{
+      font-size: medium;
+    }
+    p{
+      font-size: small;
+    }
+    img{
+      width: 100%;
+    }
+  }
+  &__feedback{
+    padding: 1rem;
   }
 }
