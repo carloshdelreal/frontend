@@ -177,7 +177,9 @@ const DoctorProfile = ({ match }) => {
       <div className="container">
         <div className="doctorProfile__bookAppointment row justify-content-center">
           <div className="col-10">
-            <button className="btn btn-block doctorProfile__bookButton" type="button">Book Appointment</button>
+            <Link to={`${match.url}/book`}>
+              <button className="btn btn-block doctorProfile__bookButton" type="button">Book Appointment</button>
+            </Link>
           </div>
         </div>
       </div>
