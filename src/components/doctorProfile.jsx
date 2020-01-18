@@ -190,7 +190,7 @@ DoctorProfile.propTypes = {
   match: PropTypes.shape({
     url: PropTypes.string,
     params: PropTypes.shape({
-      id: PropTypes.number,
+      id: PropTypes.string,
     }),
   }).isRequired,
 };
