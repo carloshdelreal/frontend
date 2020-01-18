@@ -5,19 +5,30 @@ class CarrouselSelector extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.backToStart = this.backToStart.bind(this);
     this.state = {
       selected: 0,
     };
   }
 
   handleClick(index) {
-    const { timeList, newTime } = this.props;
+    // eslint-disable-next-line react/prop-types
+    const { newTime, timeList } = this.props;
+    const arr = timeList[index];
+    const time = new Date();
+    time.setHours(arr[1]);
+    time.setMinutes(arr[2]);
+    newTime({ time });
     this.setState({ selected: index });
-    newTime({ item: timeList[index] });
+  }
+
+  backToStart() {
+    this.setState({ selected: 0 });
   }
 
 
   render() {
+    // eslint-disable-next-line react/prop-types
     const { timeList: list } = this.props;
     const { selected } = this.state;
     const x = (-25 * selected) - 12.5;
@@ -27,7 +38,7 @@ class CarrouselSelector extends React.Component {
 
     return (
       <div className="carrouselSelector">
-        { list.length > 0 ? (<h5>Select a Time</h5>) : (<h5>The agenda is full </h5>) }
+        { list ? (<h5><button type="button" onClick={() => this.backToStart()}> Select a Time </button></h5>) : (<h5>The agenda is full </h5>) }
         <div className="container">
           <div className="row carrouselSelector__row" style={styles}>
             <div className="col-3" />
@@ -65,18 +76,12 @@ class CarrouselSelector extends React.Component {
 }
 
 CarrouselSelector.defaultProps = {
+  // eslint-disable-next-line react/default-props-match-prop-types
   timeList: [],
 };
 
 CarrouselSelector.propTypes = {
   newTime: PropTypes.instanceOf(Function).isRequired,
-  timeList: PropTypes.arrayOf(
-    PropTypes.arrayOf(
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.number,
-    ),
-  ),
 };
 
 export default CarrouselSelector;
