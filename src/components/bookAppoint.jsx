@@ -1,4 +1,4 @@
-
+import axios from 'axios';
 import Calendar from 'react-calendar';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
@@ -24,6 +24,7 @@ class BookAppointment extends Component {
       selected: 0,
     };
     this.calendarChange = this.calendarChange.bind(this);
+    this.bookAppointment = this.bookAppointment.bind(this);
     this.newTime = this.newTime.bind(this);
   }
 
@@ -43,8 +44,23 @@ class BookAppointment extends Component {
     this.setState({ time: time.time, selected: time.index });
   }
 
+  bookAppointment = async e => {
+    const { id } = this.match.params;
+    const { time } = this.state;
+    const res = await axios.post('/api/vi/book/', {
+      id,
+      time,
+    });
+    console.log(res);
+  }
+
   render() {
-    const { time, date, booking, selected } = this.state;
+    const {
+      time,
+      date,
+      booking,
+      selected,
+    } = this.state;
     const month = date.toLocaleString('default', { month: 'long' });
     const timeList = booking[date.toLocaleDateString('en-US')];
     const minBookinDate = new Date();
@@ -84,7 +100,7 @@ class BookAppointment extends Component {
               <div className="row">
                 <div className="col-12 p-3">
                   <button
-                    disabled={ !time }
+                    disabled={!time}
                     className="btn btn-block doctorProfile__bookButton"
                     type="button"
                   >
