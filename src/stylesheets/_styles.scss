@@ -275,3 +275,14 @@ body{
     padding: 1rem;
   }
 }
+
+.bookAppointment{
+  &__header{
+    background: linear-gradient(90deg, $green-text 0%, $dark-background 100%);
+    overflow-x: hidden;
+    &--title{
+      color: white;
+      font-weight: 600;
+    }
+  }
+}
