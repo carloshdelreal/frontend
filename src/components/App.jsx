@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Home from './home';
 import SearchDoctor from './searchDoctor';
 import DoctorProfile from './doctorProfile';
-import BookAppointment from './bookAppointment';
+import BookAppointment from './bookAppoint';
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class App extends Component {
@@ -14,8 +14,8 @@ export default class App extends Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/doctor" exact component={SearchDoctor} />
-            <Route path="/doctor/:id" exact component={DoctorProfile} />
-            <Route path="/doctor/:id/book" component={BookAppointment} />
+            <Route path="/doctor/:id" component={DoctorProfile} />
+            <Route path="/book/:id" component={BookAppointment} />
             <Route path="/about" render={() => <div>About</div>} />
           </Switch>
         </div>

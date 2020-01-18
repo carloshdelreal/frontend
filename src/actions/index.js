@@ -1,3 +1,4 @@
+/* eslint-disable arrow-parens */
 const CHANGE_SPECIALTY = 'CHANGE_SPECIALTY';
 const TOGGLE_OFF_SPECIALTY = 'TOGGLE_OFF_SPECIALTY';
 const LOAD_DOCTORS = 'LOAD_DOCTORS';

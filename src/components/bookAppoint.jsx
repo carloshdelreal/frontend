@@ -5,18 +5,26 @@ import BackCaretWhite from '../images/backCaretWhite.png';
 import CarrouselSelector from './carrousel';
  
 class BookAppointment extends Component {
-  state = {
+  constructor(props) {
+    super(props)
+    this.state = {
+    }
+    this.calendarChange = this.calendarChange.bind(this)
   }
 
-  componentDidMount(){
-    let date = new Date()
-    do{
-      date.setDate(date.getDate() + 1)
+  componentDidMount() {
+    let date = new Date();
+    do {
+      date.setDate(date.getDate() + 1);
     } while(date.getDay()=== 0 || date.getDay() === 6)
+
     this.setState({ date: date })
   }
  
-  onChange = date => this.setState({ date })
+  calendarChange = date => {
+    this.setState({ date })
+  }
+
   newTime = item => {
     const d = this.state.date;
     const arr = item.item;
@@ -48,7 +56,7 @@ class BookAppointment extends Component {
             </div>
           </div>
           <Calendar
-            onChange={this.onChange}
+            onChange={this.calendarChange}
             minDate={minBookinDate}
             value={this.state.date}
             tileDisabled={({activeStartDate, date, view }) => date.getDay() === 0}

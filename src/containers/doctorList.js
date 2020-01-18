@@ -1,3 +1,4 @@
+/* eslint-disable arrow-parens */
 import axios from 'axios';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';

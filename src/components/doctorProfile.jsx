@@ -87,7 +87,6 @@ const Feedback = () => {
 const DoctorProfile = ({ match }) => {
   return (
     <div>
-      {match.params.docname}
       <div className="doctorProfile container">
         <div className="doctorProfile__nav row justify-content-between">
           <div className="col-6 text-left">
@@ -177,7 +176,7 @@ const DoctorProfile = ({ match }) => {
       <div className="container">
         <div className="doctorProfile__bookAppointment row justify-content-center">
           <div className="col-10">
-            <Link to={`${match.url}/book`}>
+            <Link to={`/book/${match.params.id}`}>
               <button className="btn btn-block doctorProfile__bookButton" type="button">Book Appointment</button>
             </Link>
           </div>
@@ -190,6 +189,9 @@ const DoctorProfile = ({ match }) => {
 DoctorProfile.propTypes = {
   match: PropTypes.shape({
     url: PropTypes.string,
+    params: PropTypes.shape({
+      id: PropTypes.number,
+    }),
   }).isRequired,
 };
 
