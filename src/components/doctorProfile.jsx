@@ -8,183 +8,177 @@ import profileImg from '../images/doctorImage.jpg';
 import messageWhite from '../images/messageWhite.png';
 import mapImage from '../images/map.png';
 
-const DoctorInfo = () => {
-  return (
-    <div className="doctorProfile__doctorInfo">
-      <h5>Education</h5>
-      <ul>
-        <li>
-          MD - General Medicine|College Name
-        </li>
-        <li>
-          MBBS-Nephrology|More info
-        </li>
-      </ul>
+const DoctorInfo = () => (
+  <div className="doctorProfile__doctorInfo">
+    <h5>Education</h5>
+    <ul>
+      <li>
+        MD - General Medicine|College Name
+      </li>
+      <li>
+        MBBS-Nephrology|More info
+      </li>
+    </ul>
 
-      <h5>Specialization</h5>
-      <ul>
-        <li>
-          Consultation Physician
-        </li>
-        <li>
-          Internal Medicine
-        </li>
-      </ul>
+    <h5>Specialization</h5>
+    <ul>
+      <li>
+        Consultation Physician
+      </li>
+      <li>
+        Internal Medicine
+      </li>
+    </ul>
 
-      <h5>Services Offered</h5>
-      <ul>
-        <li>
-          Peritoneal Dialysis
-        </li>
-        <li>
-          Kidney Stone treatment
-        </li>
-      </ul>
-    </div>
-  );
-};
+    <h5>Services Offered</h5>
+    <ul>
+      <li>
+        Peritoneal Dialysis
+      </li>
+      <li>
+        Kidney Stone treatment
+      </li>
+    </ul>
+  </div>
+);
 
-const ClinicInfo = () => {
-  return (
-    <div className="doctorProfile__clinicInfo">
-      <h5>Santa Ana Clinic</h5>
-      <p>Here the direction and more info about the clinic</p>
-      <img src={mapImage} alt="locationMap" />
-    </div>
-  );
-};
+const ClinicInfo = () => (
+  <div className="doctorProfile__clinicInfo">
+    <h5>Santa Ana Clinic</h5>
+    <p>Here the direction and more info about the clinic</p>
+    <img src={mapImage} alt="locationMap" />
+  </div>
+);
 
-const Feedback = () => {
-  return (
-    <div className="doctorProfile__feedback">
-      <div>
-        <p className="doctorProfile__feedback--date">10 days ago</p>
-        <h5>happyUser123</h5>
-        <p className="doctorProfile__feedback--post">
-          doctor is very kind and Lorem, ipsum dolor sit amet
-          consectetur adipisicing elit. Quas, et possimus, repellendus
-          consequatur perspiciatis maxime qui, iure at praesentium
-          consectetur vel! At ut adipisci officiis ipsam delectus
-          aliquid vel earum.
-        </p>
-      </div>
-      <hr />
-      <div>
-        <p className="doctorProfile__feedback--date">10 days ago</p>
-        <h5>happyUser123</h5>
-        <p className="doctorProfile__feedback--post">
-          doctor is very kind and Lorem, ipsum dolor sit amet
-          consectetur adipisicing elit. Quas, et possimus, repellendus
-          consequatur perspiciatis maxime qui, iure at praesentium
-          consectetur vel! At ut adipisci officiis ipsam delectus
-          aliquid vel earum.
-        </p>
-      </div>
-    </div>
-  );
-};
 
-const DoctorProfile = ({ match }) => {
-  return (
+const Feedback = () => (
+  <div className="doctorProfile__feedback">
     <div>
-      <div className="doctorProfile container">
-        <div className="doctorProfile__nav row justify-content-between">
-          <div className="col-6 text-left">
-            <Link to="/">
-              <img src={BackCaretWhite} alt="back caret" />
-            </Link>
+      <p className="doctorProfile__feedback--date">10 days ago</p>
+      <h5>happyUser123</h5>
+      <p className="doctorProfile__feedback--post">
+        doctor is very kind and Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Quas, et possimus, repellendus
+        consequatur perspiciatis maxime qui, iure at praesentium
+        consectetur vel! At ut adipisci officiis ipsam delectus
+        aliquid vel earum.
+      </p>
+    </div>
+    <hr />
+    <div>
+      <p className="doctorProfile__feedback--date">10 days ago</p>
+      <h5>happyUser123</h5>
+      <p className="doctorProfile__feedback--post">
+        doctor is very kind and Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Quas, et possimus, repellendus
+        consequatur perspiciatis maxime qui, iure at praesentium
+        consectetur vel! At ut adipisci officiis ipsam delectus
+        aliquid vel earum.
+      </p>
+    </div>
+  </div>
+);
+
+const DoctorProfile = ({ match }) => (
+  <div>
+    <div className="doctorProfile container">
+      <div className="doctorProfile__nav row justify-content-between">
+        <div className="col-6 text-left">
+          <Link to="/">
+            <img src={BackCaretWhite} alt="back caret" />
+          </Link>
+        </div>
+        <div className="doctorProfile__location col-6">
+          <div>
+            <img src={locationWhite} alt="location" />
           </div>
-          <div className="doctorProfile__location col-6">
-            <div>
-              <img src={locationWhite} alt="location" />
-            </div>
-            <div className="doctorProfile__location--text">
-              bangalore
-            </div>
+          <div className="doctorProfile__location--text">
+            bangalore
           </div>
         </div>
+      </div>
 
-        <div className="doctorProfile__heading row justify-content-center">
-          <div className="col-12 text-center">
-            <h3>Dr Hans Landa</h3>
+      <div className="doctorProfile__heading row justify-content-center">
+        <div className="col-12 text-center">
+          <h3>Dr Hans Landa</h3>
+        </div>
+        <div className="col-10 text-center">
+          <div className="doctorProfile__heading--call d-inline-block">
+            <img src={callWhite} alt="call" />
           </div>
-          <div className="col-10 text-center">
-            <div className="doctorProfile__heading--call d-inline-block">
-              <img src={callWhite} alt="call" />
-            </div>
-            <div className="doctorProfile__heading--picture rounded-circle d-inline-block">
-              <img src={profileImg} alt="doctor profile" />
-            </div>
-            <div className="doctorProfile__heading--message d-inline-block">
-              <img src={messageWhite} alt="message" />
-            </div>
+          <div className="doctorProfile__heading--picture rounded-circle d-inline-block">
+            <img src={profileImg} alt="doctor profile" />
           </div>
-          <div className="col-12 text-center">
-            <p>Orthopedy</p>
+          <div className="doctorProfile__heading--message d-inline-block">
+            <img src={messageWhite} alt="message" />
           </div>
         </div>
+        <div className="col-12 text-center">
+          <p>Orthopedy</p>
+        </div>
+      </div>
 
-        <div className="container doctorProfile__heading--exp doctor__price_exp_likes py-1">
-          <div className="row justify-content-center">
-            <div className="col-8">
-              <div className="row">
-                <div className="text-left p-0 col-3">
-                  <p>
-                    $150
-                  </p>
-                </div>
-                <div className="text-center p-0 col-6">
-                  <p>
-                    12 yrs of exp
-                  </p>
-                </div>
-                <div className="doctor__price_exp_likes--likes text-right p-0 col-3">
-                  <p>
-                    <span>&hearts;</span>
-                    123
-                  </p>
-                </div>
+      <div className="container doctorProfile__heading--exp doctor__price_exp_likes py-1">
+        <div className="row justify-content-center">
+          <div className="col-8">
+            <div className="row">
+              <div className="text-left p-0 col-3">
+                <p>
+                  $150
+                </p>
+              </div>
+              <div className="text-center p-0 col-6">
+                <p>
+                  12 yrs of exp
+                </p>
+              </div>
+              <div className="doctor__price_exp_likes--likes text-right p-0 col-3">
+                <p>
+                  <span>&hearts;</span>
+                  123
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="container">
-        <div className="doctorProfile__navInfo row">
-          <div className="col-4">
-            <NavLink to={match.url} activeStyle={{ color: 'red' }}>
-              Doctor's Info
-            </NavLink>
-          </div>
-          <div className="col-4">
-            <NavLink to={`${match.url}/email`} activeStyle={{ color: 'red' }}>
-              Clinic's Info
-            </NavLink>
-          </div>
-          <div className="col-4">
-            <NavLink to={`${match.url}/address`} activeStyle={{ color: 'red' }}>
-              Feedback
-            </NavLink>
-          </div>
+    </div>
+    <div className="container">
+      <div className="doctorProfile__navInfo row">
+        <div className="col-4">
+          <NavLink to={match.url} activeStyle={{ color: 'red' }}>
+            Doctor&aposs Info
+          </NavLink>
         </div>
-      </div>
-      <div className='container'>
-        <Route exact path={match.url} component={DoctorInfo} />
-        <Route path={`${match.url}/email`} component={ClinicInfo} />
-        <Route path={`${match.url}/address`} component={Feedback} />
-      </div>
-      <div className="container">
-        <div className="doctorProfile__bookAppointment row justify-content-center">
-          <div className="col-10">
-            <Link to={`/book/${match.params.id}`}>
-              <button className="btn btn-block doctorProfile__bookButton" type="button">Book Appointment</button>
-            </Link>
-          </div>
+        <div className="col-4">
+          <NavLink to={`${match.url}/email`} activeStyle={{ color: 'red' }}>
+            Clinic&aposs Info
+          </NavLink>
+        </div>
+        <div className="col-4">
+          <NavLink to={`${match.url}/address`} activeStyle={{ color: 'red' }}>
+            Feedback
+          </NavLink>
         </div>
       </div>
     </div>
-  );
-};
+    <div className="container">
+      <Route exact path={match.url} component={DoctorInfo} />
+      <Route path={`${match.url}/email`} component={ClinicInfo} />
+      <Route path={`${match.url}/address`} component={Feedback} />
+    </div>
+    <div className="container">
+      <div className="doctorProfile__bookAppointment row justify-content-center">
+        <div className="col-10">
+          <Link to={`/book/${match.params.id}`}>
+            <button className="btn btn-block doctorProfile__bookButton" type="button">Book Appointment</button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 
 DoctorProfile.propTypes = {
   match: PropTypes.shape({
