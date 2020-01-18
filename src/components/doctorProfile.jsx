@@ -79,12 +79,12 @@ const Feedback = () => (
   </div>
 );
 
-const DoctorProfile = ({ match }) => (
+const DoctorProfile = ({ match, searchAgain }) => (
   <div>
     <div className="doctorProfile container">
       <div className="doctorProfile__nav row justify-content-between">
         <div className="col-6 text-left">
-          <Link to="/">
+          <Link to="/doctor" onClick={() => searchAgain}>
             <img src={BackCaretWhite} alt="back caret" />
           </Link>
         </div>
@@ -187,6 +187,7 @@ DoctorProfile.propTypes = {
       id: PropTypes.string,
     }),
   }).isRequired,
+  searchAgain: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default DoctorProfile;

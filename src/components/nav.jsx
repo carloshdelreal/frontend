@@ -31,7 +31,7 @@ class NavComponent extends Component {
       <div className="nav-component d-flex justify-content-space-between">
         <div className="item d-flex text-left">
           <button className="nav-component__button" type="button">
-            <Link to="/">
+            <Link to="/" onClick={this.unselectSpecialty}>
               <img src={backCaret} alt="backcaret" />
             </Link>
           </button>
