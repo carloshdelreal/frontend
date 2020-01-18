@@ -285,4 +285,18 @@ body{
       font-weight: 600;
     }
   }
+  .doctorCard{
+    font-size: small;
+    h3{
+      font-size: large;
+    }
+    p{
+      margin: 0;
+    }
+  }
+  .doctorProfile{
+    &__bookButton{
+      margin: 1rem 0;
+    }
+  }
 }

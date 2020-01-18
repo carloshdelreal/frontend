@@ -5,10 +5,6 @@ class CarrouselSelector extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.backToStart = this.backToStart.bind(this);
-    this.state = {
-      selected: 0,
-    };
   }
 
   handleClick(index) {
@@ -18,19 +14,12 @@ class CarrouselSelector extends React.Component {
     const time = new Date();
     time.setHours(arr[1]);
     time.setMinutes(arr[2]);
-    newTime({ time });
-    this.setState({ selected: index });
+    newTime({ time, index });
   }
-
-  backToStart() {
-    this.setState({ selected: 0 });
-  }
-
 
   render() {
     // eslint-disable-next-line react/prop-types
-    const { timeList: list } = this.props;
-    const { selected } = this.state;
+    const { timeList: list, selected } = this.props;
     const x = (-25 * selected) - 12.5;
     const styles = {
       transform: `translateX(${x}%)`,
@@ -38,7 +27,7 @@ class CarrouselSelector extends React.Component {
 
     return (
       <div className="carrouselSelector">
-        { list ? (<h5><button type="button" onClick={() => this.backToStart()}> Select a Time </button></h5>) : (<h5>The agenda is full </h5>) }
+        { list ? (<h5>Select a Time</h5>) : (<h5>The agenda is full </h5>) }
         <div className="container">
           <div className="row carrouselSelector__row" style={styles}>
             <div className="col-3" />
