@@ -4,6 +4,7 @@ import Home from './home';
 import SearchDoctor from './searchDoctor';
 import DoctorProfile from './doctorProfile';
 import BookAppointment from './bookAppoint';
+import ModalComponent from './modal';
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class App extends Component {
@@ -17,6 +18,8 @@ export default class App extends Component {
             <Route path="/doctor/:id" component={DoctorProfile} />
             <Route path="/book/:id" component={BookAppointment} />
             <Route path="/about" render={() => <div>About</div>} />
+            <Route path="/modal" component={ModalComponent} />
+
           </Switch>
         </div>
       </BrowserRouter>

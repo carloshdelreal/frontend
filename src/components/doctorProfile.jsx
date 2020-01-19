@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, Route, NavLink } from 'react-router-dom';
 import BackCaretWhite from '../images/backCaretWhite.png';
@@ -7,6 +8,7 @@ import callWhite from '../images/callWhite.png';
 import profileImg from '../images/doctorImage.jpg';
 import messageWhite from '../images/messageWhite.png';
 import mapImage from '../images/map.png';
+import { toggleOffSpecialty } from '../actions/index';
 
 const DoctorInfo = () => (
   <div className="doctorProfile__doctorInfo">
@@ -180,6 +182,13 @@ const DoctorProfile = ({ match, searchAgain }) => (
 );
 
 
+const mapStateToProps = state => ({
+});
+
+const mapDispatchToProps = dispatch => ({
+  toggleOffSpecialty: () => dispatch(toggleOffSpecialty()),
+});
+
 DoctorProfile.propTypes = {
   match: PropTypes.shape({
     url: PropTypes.string,
@@ -187,7 +196,6 @@ DoctorProfile.propTypes = {
       id: PropTypes.string,
     }),
   }).isRequired,
-  searchAgain: PropTypes.instanceOf(Function).isRequired,
 };
 
-export default DoctorProfile;
+export default connect(mapStateToProps, mapDispatchToProps)(DoctorProfile);
