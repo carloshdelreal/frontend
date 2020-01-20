@@ -22,12 +22,12 @@ const AdminComponent = ({ match }) => {
       </div>
       <div className="container">
         <div className="doctorProfile__navInfo row">
-          <div className="col-6 text-center">
+          <div className="admin__nav col-6 text-center">
             <NavLink to={match.url}>
               All
             </NavLink>
           </div>
-          <div className="col-6 text-center">
+          <div className="admin__nav col-6 text-center">
             <NavLink to={`${match.url}/upcoming`}>
               Upcoming
             </NavLink>

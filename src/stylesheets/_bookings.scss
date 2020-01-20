@@ -1,3 +1,11 @@
+.admin{
+  &__nav{
+    a{
+      color: $green-text;
+    }
+  }
+}
+
 .booking{
   font-size: smaller;
   border-bottom: 1px solid lightgrey;
